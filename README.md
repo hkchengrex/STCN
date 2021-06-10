@@ -90,7 +90,7 @@ All evaluations are done in 480p resolution. FPS for test-dev is measured on the
 | --- |:---:| :--:|
 | DAVIS Interactive | 88.4 | 88.8 |
 
-For DAVIS interactive, we changed the propagation module of [MiVOS](https://github.com/hkchengrex/MiVOS) from STM to STCN. See [this link](www.google.com) for details.
+For DAVIS interactive, we changed the propagation module of [MiVOS](https://github.com/hkchengrex/MiVOS) from STM to STCN. See [this link](https://github.com/hkchengrex/MiVOS/tree/MiVOS-STCN) for details.
 
 ## Reproducing the results
 
