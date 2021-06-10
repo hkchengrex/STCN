@@ -1,0 +1,244 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EHLYGK132J"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-EHLYGK132J');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+
+	<title>STCN</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link href="style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+
+<body>
+<br><br><br><br>
+<div class="container">
+        <div class="row text-center" style="font-size:38px">
+            <div class="col">
+            Rethinking Space-Time Networks with Improved Memory Coverage for Efficient Video Object Segmentation
+            </div>
+        </div>
+
+        <br>
+        <div class="row text-center light" style="font-size:28px">
+            <div class="col">
+            <!-- Whatever -->
+            </div>
+        </div>
+        <br>
+
+        <div class="h-100 row text-center heavy justify-content-md-center" style="font-size:24px;">
+            <div class="col-sm-3">
+                <a href="https://hkchengrex.github.io/">Ho Kei Cheng</a>
+            </div>
+            <div class="col-sm-3">
+                Yu-Wing Tai
+            </div>
+            <div class="col-sm-3">
+                Chi-Keung Tang
+            </div>
+        </div>
+
+        <br>
+
+        <div class="h-100 row text-center justify-content-md-center" style="font-size:20px;">
+            <div class="col-sm-2">
+                <a href="https://arxiv.org/abs/2106.05210">[arXiv]</a>
+            </div>
+            <div class="col-sm-2">
+                <a href="https://arxiv.org/pdf/2106.05210">[Paper]</a>
+            </div>
+            <div class="col-sm-2">
+                <a href="https://github.com/hkchengrex/STCN">[Code]</a>
+            </div>
+        </div>
+
+    <br>
+
+    <hr>
+
+    <div class="row" style="font-size:32px">
+        <div class="col">
+        Abstract
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p style="text-align: justify;">
+                This paper presents a simple yet effective approach to modeling space-time correspondences in the context of video object segmentation. Unlike most existing approaches, we establish correspondences directly between frames without re-encoding the mask features for every object, leading to a highly efficient and robust framework. With the correspondences, every node in the current query frame is inferred by aggregating features from the past in an associative fashion. 
+                We cast the aggregation process as a voting problem and find that the existing inner-product affinity leads to poor use of memory with a small (fixed) subset of memory nodes dominating the votes, regardless of the query. 
+                In light of this phenomenon, we propose using the negative squared Euclidean distance instead to compute the affinities. We validated that every memory node now has a chance to contribute, and experimentally showed that such diversified voting is beneficial to both memory efficiency and inference accuracy. 
+                The synergy of correspondence networks and diversified voting works exceedingly well, achieves new state-of-the-art results on both DAVIS and YouTubeVOS datasets while running significantly faster at 20+ FPS for multiple objects without bells and whistles.
+            </p>
+        </div>
+    </div>
+
+    <div class="h-100 row text-center justify-content-md-center">
+        <div class="col">
+            <img width="65%" src="https://imgur.com/TY1ScRy.jpg" alt="framework">
+        </div>
+    </div>
+
+    <br>
+    <hr>
+    <br>
+
+    <div class="row" style="font-size:32px">
+        <div class="col">
+        Numbers
+        </div>
+    </div>
+
+    <div class="h-100 row text-center justify-content-md-center">
+        <div class="col">
+            <table class="metric_table">
+                <tr>
+                    <th>Dataset</th>
+                    <th>Split</th>
+                    <th>J&F</th>
+                    <th>J</th>
+                    <th>F</th>
+                    <th>FPS</th>
+                    <th>FPS (AMP)</th>
+                </tr>
+                <tr>
+                    <td>DAVIS 2016</td>
+                    <td>validation</td>
+                    <td>91.7</td>
+                    <td>90.4</td>
+                    <td>93.0</td>
+                    <td>26.9</td>
+                    <td>40.8</td>
+                </tr>
+                <tr>
+                    <td>DAVIS 2017</td>
+                    <td>validation</td>
+                    <td>85.3</td>
+                    <td>82.0</td>
+                    <td>88.6</td>
+                    <td>20.2</td>
+                    <td>34.1</td>
+                </tr>
+                <tr>
+                    <td>DAVIS 2017</td>
+                    <td>test-dev</td>
+                    <td>79.9</td>
+                    <td>76.3</td>
+                    <td>83.5</td>
+                    <td>14.6</td>
+                    <td>22.7</td>
+                </tr>
+            </table>
+            <br>
+            <table class="metric_table">
+                <tr>
+                    <th>Dataset</th>
+                    <th>Split</th>
+                    <th>Global Mean</th>
+                    <th>J Seen</th>
+                    <th>F Seen</th>
+                    <th>J Unseen</th>
+                    <th>F Unseen</th>
+                </tr>
+                <tr>
+                    <td>YouTubeVOS 18</td>
+                    <td>validation</td>
+                    <td>84.3</td>
+                    <td>83.2</td>
+                    <td>79.0</td>
+                    <td>87.9</td>
+                    <td>87.2</td>
+                </tr>
+                <tr>
+                    <td>YouTubeVOS 19</td>
+                    <td>validation</td>
+                    <td>84.2</td>
+                    <td>82.6</td>
+                    <td>79.4</td>
+                    <td>87.0</td>
+                    <td>87.7</td>
+                </tr>
+            </table>
+            <br>
+            <table class="metric_table">
+                <tr>
+                    <th>Dataset</th>
+                    <th>AUC-J&F</th>
+                    <th>J&F @ 60s</th>
+                </tr>
+                <tr>
+                    <td>DAVIS Interactive</td>
+                    <td>88.4</td>
+                    <td>88.8</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <br>
+    <hr>
+    <br>
+
+    <div class="row" style="font-size:32px">
+        <div class="col">
+        Presentation
+        </div>
+    </div>
+    <br>
+    <center>
+        <iframe width="854" height="480" 
+            src="https://www.youtube.com/embed/LDPBqnMzJUc" 
+            title="YouTube video player" frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
+    </center>
+
+    <br>
+    <hr>
+    <br>
+
+    <div class="row" style="font-size:32px">
+        <div class="col">
+        Qualitative Results
+        </div>
+    </div>
+    <br>
+    <center>
+        <iframe width="854" height="480" 
+            src="https://www.youtube.com/embed/j88gG-foerw" 
+            title="YouTube video player" frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
+    </center>
+
+    <br><br>
+
+    <div style="font-size: 14px;">
+        Contact: Ho Kei Cheng (Rex) hkchengrex@gmail.com
+        <br>
+        Website modified from: https://github.com/ajabri/videowalk/blob/master/index.html
+    </div>
+
+    <br><br>
+
+</div>
+
+</body>
+</html>
