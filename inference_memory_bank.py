@@ -4,10 +4,9 @@ import torch
 
 def softmax_w_top(x, top):
     values, indices = torch.topk(x, k=top, dim=1)
-    x_exp = torch.exp(values - values[:,0])
+    x_exp = values.exp_()
 
-    x_exp_sum = torch.sum(x_exp, dim=1, keepdim=True)
-    x_exp /= x_exp_sum
+    x_exp /= torch.sum(x_exp, dim=1, keepdim=True)
     x.zero_().scatter_(1, indices, x_exp) # B * THW * HW
 
     return x
@@ -31,9 +30,10 @@ class MemoryBank:
 
         a = mk.pow(2).sum(1).unsqueeze(2)
         b = 2 * (mk.transpose(1, 2) @ qk)
-        c = qk.pow(2).expand(B, -1, -1).sum(1).unsqueeze(1)
+        # We don't actually need this, will update paper later
+        # c = qk.pow(2).expand(B, -1, -1).sum(1).unsqueeze(1)
 
-        affinity = (-a+b-c) / math.sqrt(CK)  # B, NE, HW
+        affinity = (-a+b) / math.sqrt(CK)  # B, NE, HW
         affinity = softmax_w_top(affinity, top=self.top_k)  # B, THW, HW
 
         return affinity
