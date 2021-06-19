@@ -1,6 +1,6 @@
 """
 Generic evaluation script 
-The segmentation mask for each object when it first appears is required
+The segmentation mask for each object when they first appear is required
 (YouTubeVOS style, but dense)
 
 Optimized for compatibility, not speed.
