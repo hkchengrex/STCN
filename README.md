@@ -92,6 +92,12 @@ All evaluations are done in 480p resolution. FPS for test-dev is measured on the
 
 For DAVIS interactive, we changed the propagation module of [MiVOS](https://github.com/hkchengrex/MiVOS) from STM to STCN. See [this link](https://github.com/hkchengrex/MiVOS/tree/MiVOS-STCN) for details.
 
+## Try your own data
+
+If you (somehow) have the first-frame segmentation (or more generally, segmentation of each object when they first appear), you can use `eval_generic.py`. Check the top of that file for instructions.
+
+If you just want to play with it interactively, I highly recommend [our extension to MiVOS](https://github.com/hkchengrex/MiVOS/tree/MiVOS-STCN) with love -- it comes with an interactive GUI, and is highly efficient/effective.
+
 ## Reproducing the results
 
 ### Pretrained models
