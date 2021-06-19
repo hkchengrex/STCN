@@ -21,14 +21,16 @@ Despite its effectiveness, the network itself is very simple with lots of room f
     2. DAVIS 2017 validation/test-dev
     3. YouTubeVOS 2018/2019
 
-3. Steps to reproduce
+3. [Try our model on your own data](#try-your-own-data)
+
+4. Steps to reproduce
    1. [Pretrained models](#pretrained-models)
    2. [Inference](#inference)
    3. [Training](#training)
 
-4. [If you want to look closer](#looking-closer)
+5. [If you want to look closer](#looking-closer)
 
-5. [Citation](#citation)
+6. [Citation](#citation)
 
 ## A Gentle Introduction
 
