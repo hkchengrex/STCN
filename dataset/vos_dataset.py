@@ -51,11 +51,11 @@ class VOSDataset(Dataset):
         ])
 
         self.pair_im_dual_transform = transforms.Compose([
-            transforms.RandomAffine(degrees=15, shear=10, interpolation=InterpolationMode.BICUBIC, fillcolor=im_mean),
+            transforms.RandomAffine(degrees=15, shear=10, interpolation=InterpolationMode.BICUBIC, fill=im_mean),
         ])
 
         self.pair_gt_dual_transform = transforms.Compose([
-            transforms.RandomAffine(degrees=15, shear=10, interpolation=InterpolationMode.NEAREST, fillcolor=0),
+            transforms.RandomAffine(degrees=15, shear=10, interpolation=InterpolationMode.NEAREST, fill=0),
         ])
 
         # These transform are the same for all pairs in the sampled sequence

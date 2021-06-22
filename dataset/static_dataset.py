@@ -47,13 +47,13 @@ class StaticTransformDataset(Dataset):
         ])
 
         self.pair_im_dual_transform = transforms.Compose([
-            transforms.RandomAffine(degrees=20, scale=(0.9,1.1), shear=10, interpolation=InterpolationMode.BICUBIC, fillcolor=im_mean),
+            transforms.RandomAffine(degrees=20, scale=(0.9,1.1), shear=10, interpolation=InterpolationMode.BICUBIC, fill=im_mean),
             transforms.Resize(384, InterpolationMode.BICUBIC),
             transforms.RandomCrop((384, 384), pad_if_needed=True, fill=im_mean),
         ])
 
         self.pair_gt_dual_transform = transforms.Compose([
-            transforms.RandomAffine(degrees=20, scale=(0.9,1.1), shear=10, interpolation=InterpolationMode.BICUBIC, fillcolor=0),
+            transforms.RandomAffine(degrees=20, scale=(0.9,1.1), shear=10, interpolation=InterpolationMode.BICUBIC, fill=0),
             transforms.Resize(384, InterpolationMode.NEAREST),
             transforms.RandomCrop((384, 384), pad_if_needed=True, fill=0),
         ])
@@ -65,12 +65,12 @@ class StaticTransformDataset(Dataset):
         ])
 
         self.all_im_dual_transform = transforms.Compose([
-            transforms.RandomAffine(degrees=0, scale=(0.8, 1.5), fillcolor=im_mean),
+            transforms.RandomAffine(degrees=0, scale=(0.8, 1.5), fill=im_mean),
             transforms.RandomHorizontalFlip(),
         ])
 
         self.all_gt_dual_transform = transforms.Compose([
-            transforms.RandomAffine(degrees=0, scale=(0.8, 1.5), fillcolor=0),
+            transforms.RandomAffine(degrees=0, scale=(0.8, 1.5), fill=0),
             transforms.RandomHorizontalFlip(),
         ])
 
