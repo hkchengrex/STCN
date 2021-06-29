@@ -47,9 +47,9 @@ class MemoryReader(nn.Module):
 
         a = mk.pow(2).sum(1).unsqueeze(2)
         b = 2 * (mk.transpose(1, 2) @ qk)
-        c = qk.pow(2).sum(1).unsqueeze(1)
+        #c = qk.pow(2).sum(1).unsqueeze(1)
 
-        affinity = (-a+b-c) / math.sqrt(CK)   # B, THW, HW
+        affinity = (-a+b) / math.sqrt(CK)   # B, THW, HW
         
         maxes = torch.max(affinity, dim=1, keepdim=True)[0]
         x_exp = torch.exp(affinity - maxes)
