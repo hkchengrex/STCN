@@ -47,11 +47,14 @@ class MemoryReader(nn.Module):
 
         a = mk.pow(2).sum(1).unsqueeze(2)
         b = 2 * (mk.transpose(1, 2) @ qk)
-        # We don't actually need this, will update paper later
-        # c = qk.pow(2).sum(1).unsqueeze(1)
+        c = qk.pow(2).sum(1).unsqueeze(1)
 
-        affinity = (-a+b) / math.sqrt(CK)   # B, THW, HW
-        affinity = F.softmax(affinity, dim=1)
+        affinity = (-a+b-c) / math.sqrt(CK)   # B, THW, HW
+        
+        maxes = torch.max(affinity, dim=1, keepdim=True)[0]
+        x_exp = torch.exp(affinity - maxes)
+        x_exp_sum = torch.sum(x_exp, dim=1, keepdim=True)
+        affinity = x_exp / x_exp_sum 
 
         return affinity
 
