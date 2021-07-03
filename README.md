@@ -83,10 +83,10 @@ All evaluations are done in 480p resolution. FPS for test-dev is measured on the
 | DAVIS 2017 | validation | 85.3 | 82.0 | 88.6 | 20.2 | 34.1 |
 | DAVIS 2017 | test-dev | 79.9 | 76.3 | 83.5 | 14.6 | 22.7 |
 
-| Dataset | Split | Overall Score | J-Seen | J-Unseen | F-Seen | F-Unseen
+| Dataset | Split | Overall Score | J-Seen | F-Seen | J-Unseen | F-Unseen
 | --- | --- | :--:|:--:|:---:|:---:|:---:|
-| YouTubeVOS 18 | validation | 84.3 | 83.2 | 79.0 | 87.9 | 87.2 |
-| YouTubeVOS 19 | validation | 84.2 | 82.6 | 79.4 | 87.0 | 87.7 |
+| YouTubeVOS 18 | validation | 84.3 | 83.2 | 87.9 | 79.0 | 87.2 |
+| YouTubeVOS 19 | validation | 84.2 | 82.6 | 87.0 | 79.4 | 87.7 |
 
 | Dataset | AUC-J&F | J&F @ 60s
 | --- |:---:| :--:|
