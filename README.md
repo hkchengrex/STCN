@@ -16,7 +16,7 @@ Despite its effectiveness, the network itself is very simple with lots of room f
 
 1. Reproducibility: We changed the softmax implementation from the "clean" one back to our original one used in the paper. Reproducibility should be better, but we still notice performance fluctuation even with all the random seeds fixed. The performance on YouTubeVOS is more stable (~± 0.2 global score) while we see more variations on the small DAVIS validation set (~± 0.5 J&F). Longer training (e.g., s012) also seem to make the process more stable.
 
-2. CBAM block: we tried without CBAM block and I would say that we don't really need it. We get -0.6 J&F in DAVIS and +0.1 global score in YouTubeVOS -- so nothing really significant. You are welcome to drop this block (see `no_cbam` branch).
+2. CBAM block: we tried without CBAM block and I would say that we don't really need it. We get -0.6 J&F in DAVIS and +0.1 global score in YouTubeVOS -- so nothing really significant. You are welcome to drop this block (see `no_cbam` branch, only code is updated, no pretrained models).
 
 ## What do we have here?
 
