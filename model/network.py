@@ -47,10 +47,12 @@ class MemoryReader(nn.Module):
 
         a = mk.pow(2).sum(1).unsqueeze(2)
         b = 2 * (mk.transpose(1, 2) @ qk)
-        #c = qk.pow(2).sum(1).unsqueeze(1)
+        # this term will be cancelled out in the softmax
+        # c = qk.pow(2).sum(1).unsqueeze(1)
 
         affinity = (-a+b) / math.sqrt(CK)   # B, THW, HW
         
+        # softmax operation; aligned the evaluation style
         maxes = torch.max(affinity, dim=1, keepdim=True)[0]
         x_exp = torch.exp(affinity - maxes)
         x_exp_sum = torch.sum(x_exp, dim=1, keepdim=True)
