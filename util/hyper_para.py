@@ -19,6 +19,7 @@ class HyperParameters():
         parser.add_argument('--davis_root', help='DAVIS data root', default='../DAVIS')
 
         parser.add_argument('--stage', help='Training stage (0-static images, 1-Blender dataset, 2-DAVIS+YouTubeVOS (300K), 3-DAVIS+YouTubeVOS (150K))', type=int, default=0)
+        parser.add_argument('--num_workers', help='Number of datalaoder workers per process', type=int, default=8)
 
         # Generic learning parameters
         parser.add_argument('-b', '--batch_size', help='Default is dependent on the training stage, see below', default=None, type=int)
