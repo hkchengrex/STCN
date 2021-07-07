@@ -83,7 +83,7 @@ def worker_init_fn(worker_id):
 
 def construct_loader(dataset):
     train_sampler = torch.utils.data.distributed.DistributedSampler(dataset, rank=local_rank, shuffle=True)
-    train_loader = DataLoader(dataset, para['batch_size'], sampler=train_sampler, num_workers=8,
+    train_loader = DataLoader(dataset, para['batch_size'], sampler=train_sampler, num_workers=para['num_workers'],
                             worker_init_fn=worker_init_fn, drop_last=True, pin_memory=True)
     return train_sampler, train_loader
 
