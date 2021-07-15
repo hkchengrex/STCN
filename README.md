@@ -8,6 +8,8 @@
 
 ![bmx](https://imgur.com/SIFq5c1.gif) ![pigs](https://imgur.com/nHvWuzi.gif)
 
+*News:* In the [YouTubeVOS 2021 challenge](https://youtube-vos.org/challenge/2021/leaderboard/), STCN achieved 1st place accuracy for novel (unknown) classes and 2nd place in overall accuracy. Our solution is faster and lighter than the overall 1st place.
+
 We present Space-Time Correspondence Networks (STCN) as the new, effective, and efficient framework to model space-time correspondences in the context of video object segmentation.
 STCN achieves SOTA results on multiple benchmarks while running fast at 20+ FPS without bells and whistles. Its speed is even higher with mixed precision.
 Despite its effectiveness, the network itself is very simple with lots of room for improvement. See the paper for technical details.
@@ -16,7 +18,9 @@ Despite its effectiveness, the network itself is very simple with lots of room f
 
 1. Reproducibility: We changed the softmax implementation from the "clean" one back to our original one used in the paper. Reproducibility should be better, but we still notice performance fluctuation even with all the random seeds fixed. The performance on YouTubeVOS is more stable (~± 0.2 global score) while we see more variations on the small DAVIS validation set (~± 0.5 J&F). Longer training (e.g., s012) also seem to make the process more stable.
 
-2. CBAM block: we tried without CBAM block and I would say that we don't really need it. We get -0.6 J&F in DAVIS and +0.1 global score in YouTubeVOS -- so nothing really significant. You are welcome to drop this block (see `no_cbam` branch).
+**UPDATE (15-July-2021)**
+
+2. CBAM block: We tried without CBAM block and I would say that we don't really need it. For s03 model, we get -1.2 in DAVIS and +0.1 in YouTubeVOS. For s012 model, we get +0.1 in DAVIS and +0.1 in YouTubeVOS. You are welcome to drop this block (see `no_cbam` branch). Overall, the much larger YouTubeVOS seems to be a better evaluation benchmark for consistency.
 
 ## What do we have here?
 
