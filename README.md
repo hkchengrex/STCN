@@ -14,13 +14,13 @@ We present Space-Time Correspondence Networks (STCN) as the new, effective, and 
 STCN achieves SOTA results on multiple benchmarks while running fast at 20+ FPS without bells and whistles. Its speed is even higher with mixed precision.
 Despite its effectiveness, the network itself is very simple with lots of room for improvement. See the paper for technical details.
 
-**UPDATE (7-July-2021)**
-
-1. Reproducibility: We changed the softmax implementation from the "clean" one back to our original one used in the paper. Reproducibility should be better, but we still notice performance fluctuation even with all the random seeds fixed. The performance on YouTubeVOS is more stable (~± 0.2 global score) while we see more variations on the small DAVIS validation set (~± 0.5 J&F). Longer training (e.g., s012) also seem to make the process more stable.
-
 **UPDATE (15-July-2021)**
 
-2. CBAM block: We tried without CBAM block and I would say that we don't really need it. For s03 model, we get -1.2 in DAVIS and +0.1 in YouTubeVOS. For s012 model, we get +0.1 in DAVIS and +0.1 in YouTubeVOS. You are welcome to drop this block (see `no_cbam` branch). Overall, the much larger YouTubeVOS seems to be a better evaluation benchmark for consistency.
+1. CBAM block: We tried without CBAM block and I would say that we don't really need it. For s03 model, we get -1.2 in DAVIS and +0.1 in YouTubeVOS. For s012 model, we get +0.1 in DAVIS and +0.1 in YouTubeVOS. You are welcome to drop this block (see `no_cbam` branch). Overall, the much larger YouTubeVOS seems to be a better evaluation benchmark for consistency.
+
+**UPDATE (22-Aug-2021)**
+
+2. Reproducibility: We have updated the package requirements below. With that environment, we obtained DAVIS J&F in the range of [85.1, 85.5] across multiple runs on two different machines.
 
 ## What do we have here?
 
@@ -57,17 +57,19 @@ There are two main contributions: STCN framework (above figure), and L2 similari
 
 ## Requirements
 
-We used these packages/versions in the development of this project. It is likely that higher versions of the same package will also work. This is not an exhaustive list -- other common python packages (e.g. pillow) are expected and not listed.
+We used these packages/versions in the development of this project. 
 
 - PyTorch `1.8.1`
 - torchvision `0.9.1`
 - OpenCV `4.2.0`
-- progressbar
+- [Pillow-SIMD](https://github.com/uploadcare/pillow-simd) `7.0.0.post3`
+- progressbar2
 - [thinspline](https://github.com/cheind/py-thin-plate-spline) for training (`pip install git+https://github.com/cheind/py-thin-plate-spline`)
 - gitpython for training
 - gdown for downloading pretrained models
+- [Other packages in my environment](docs/packages.txt), for reference only.
 
-Refer to the official [PyTorch guide](<https://pytorch.org/>) for installing PyTorch/torchvision. The rest can be installed by:
+Refer to the official [PyTorch guide](<https://pytorch.org/>) for installing PyTorch/torchvision, and the [pillow-simd](https://github.com/uploadcare/pillow-simd) guide to install Pillow-SIMD. The rest can be installed by:
 
 `pip install progressbar2 opencv-python gitpython gdown git+https://github.com/cheind/py-thin-plate-spline`
 
