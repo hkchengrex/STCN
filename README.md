@@ -4,6 +4,8 @@
 
 [Ho Kei Cheng](https://hkchengrex.github.io/), Yu-Wing Tai, Chi-Keung Tang
 
+NeurIPS 2021
+
 [[arXiv]](https://arxiv.org/abs/2106.05210) [[PDF]](https://arxiv.org/pdf/2106.05210) [[Project Page]](https://hkchengrex.github.io/STCN/) [[Papers with Code]](https://paperswithcode.com/task/semi-supervised-video-object-segmentation)
 
 ![bmx](https://imgur.com/SIFq5c1.gif) ![pigs](https://imgur.com/nHvWuzi.gif)
@@ -226,7 +228,7 @@ Please cite our paper (MiVOS if you use top-k) if you find this repo useful!
 @inproceedings{cheng2021stcn,
   title={Rethinking Space-Time Networks with Improved Memory Coverage for Efficient Video Object Segmentation},
   author={Cheng, Ho Kei and Tai, Yu-Wing and Tang, Chi-Keung},
-  booktitle={arXiv:2106.05210},
+  booktitle={NeurIPS},
   year={2021}
 }
 
