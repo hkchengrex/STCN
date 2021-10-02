@@ -70,9 +70,16 @@ test_dataset = GenericTestDataset(data_root=data_path)
 test_loader = DataLoader(test_dataset, batch_size=1, shuffle=False, num_workers=2)
 
 # Load our checkpoint
-prop_saved = torch.load(args.model)
 top_k = args.top
 prop_model = STCN().cuda().eval()
+
+# Performs input mapping such that stage 0 model can be loaded
+prop_saved = torch.load(args.model)
+for k in list(prop_saved.keys()):
+    if k == 'value_encoder.conv1.weight':
+        if prop_saved[k].shape[1] == 4:
+            pads = torch.zeros((64,1,7,7), device=prop_saved[k].device)
+            prop_saved[k] = torch.cat([prop_saved[k], pads], 1)
 prop_model.load_state_dict(prop_saved)
 
 # Start eval
