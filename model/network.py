@@ -45,12 +45,11 @@ class MemoryReader(nn.Module):
         mk = mk.flatten(start_dim=2)
         qk = qk.flatten(start_dim=2)
 
-        a = mk.pow(2).sum(1).unsqueeze(2)
-        b = 2 * (mk.transpose(1, 2) @ qk)
-        # this term will be cancelled out in the softmax
-        # c = qk.pow(2).sum(1).unsqueeze(1)
+        # See supplementary material
+        a_sq = mk.pow(2).sum(1).unsqueeze(2)
+        ab = mk.transpose(1, 2) @ qk
 
-        affinity = (-a+b) / math.sqrt(CK)   # B, THW, HW
+        affinity = (2*ab-a_sq) / math.sqrt(CK)   # B, THW, HW
         
         # softmax operation; aligned the evaluation style
         maxes = torch.max(affinity, dim=1, keepdim=True)[0]
