@@ -112,6 +112,9 @@ def pool_pairs(images, size, so):
 
     b, s, _, _, _ = images['gt'].shape
 
+    # limit number of images to save disk space
+    b = max(2, b)
+
     GT_name = 'GT'
     for b_idx in range(b):
         GT_name += ' %s\n' % images['info']['name'][b_idx]

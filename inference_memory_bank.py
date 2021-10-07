@@ -7,7 +7,9 @@ def softmax_w_top(x, top):
     x_exp = values.exp_()
 
     x_exp /= torch.sum(x_exp, dim=1, keepdim=True)
-    x.zero_().scatter_(1, indices, x_exp) # B * THW * HW
+    # The types should be the same already
+    # some people report an error here so an additional guard is added
+    x.zero_().scatter_(1, indices, x_exp.type(x.dtype)) # B * THW * HW
 
     return x
 
@@ -28,13 +30,12 @@ class MemoryBank:
         # NE means number of elements -- typically T*H*W
         B, CK, NE = mk.shape
 
-        a = mk.pow(2).sum(1).unsqueeze(2)
-        b = 2 * (mk.transpose(1, 2) @ qk)
-        # We don't actually need this, will update paper later
-        # c = qk.pow(2).expand(B, -1, -1).sum(1).unsqueeze(1)
+        # See supplementary material
+        a_sq = mk.pow(2).sum(1).unsqueeze(2)
+        ab = mk.transpose(1, 2) @ qk
 
-        affinity = (-a+b) / math.sqrt(CK)  # B, NE, HW
-        affinity = softmax_w_top(affinity, top=self.top_k)  # B, THW, HW
+        affinity = (2*ab-a_sq) / math.sqrt(CK)   # B, NE, HW
+        affinity = softmax_w_top(affinity, top=self.top_k)  # B, NE, HW
 
         return affinity
 
