@@ -33,7 +33,7 @@ Despite its effectiveness, the network itself is very simple with lots of room f
     2. DAVIS 2017 validation/test-dev
     3. YouTubeVOS 2018/2019
 
-3. [Try our model on your own data](#try-your-own-data)
+3. [Try our model on your own data (Interactive GUI available)](#try-your-own-data)
 
 4. Steps to reproduce
    1. [Pretrained models](#pretrained-models)
@@ -79,9 +79,9 @@ Refer to the official [PyTorch guide](<https://pytorch.org/>) for installing PyT
 
 ### Notations
 
-FPS is amortized, computed as total processing time / total number of frames irrespective of the number of objects, aka multi-object FPS, and measured on an RTX 2080 Ti with IO time excluded.
-We also provide inference speed when Automatic Mixed Precision (AMP) is used. We noticed that the performance is almost identical. Speed in the paper are measured without AMP.
-All evaluations are done in 480p resolution. FPS for test-dev is measured on the validation set under the same memory setting for consistency.
+- FPS is amortized, computed as total processing time / total number of frames irrespective of the number of objects, aka multi-object FPS, and measured on an RTX 2080 Ti with IO time excluded.
+- We also provide inference speed when Automatic Mixed Precision (AMP) is used -- the performance is almost identical. Speed in the paper are measured without AMP.
+- All evaluations are done in the 480p resolution. FPS for test-dev is measured on the validation set under the same memory setting (every third frame as memory) for consistency.
 
 **[[Precomputed outputs - Google Drive]](https://drive.google.com/drive/folders/1V4wslwiGaFHwq09k019tXU1HpG-kODnZ?usp=sharing)**
 
@@ -108,11 +108,11 @@ All evaluations are done in 480p resolution. FPS for test-dev is measured on the
 
 For DAVIS interactive, we changed the propagation module of [MiVOS](https://github.com/hkchengrex/MiVOS) from STM to STCN. See [this link](https://github.com/hkchengrex/MiVOS/tree/MiVOS-STCN) for details.
 
-## Try your own data
+## Try on your own data (Interactive GUI available)
 
 If you (somehow) have the first-frame segmentation (or more generally, segmentation of each object when they first appear), you can use `eval_generic.py`. Check the top of that file for instructions.
 
-If you just want to play with it interactively, I highly recommend [our extension to MiVOS](https://github.com/hkchengrex/MiVOS/tree/MiVOS-STCN) with love -- it comes with an interactive GUI, and is highly efficient/effective.
+If you just want to play with it interactively, I highly recommend [our extension to MiVOS](https://github.com/hkchengrex/MiVOS/tree/MiVOS-STCN) :yellow_heart: -- it comes with an interactive GUI, and is highly efficient/effective.
 
 ## Reproducing the results
 
