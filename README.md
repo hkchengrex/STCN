@@ -10,7 +10,7 @@ NeurIPS 2021
 
 ![bmx](https://imgur.com/SIFq5c1.gif) ![pigs](https://imgur.com/nHvWuzi.gif)
 
-*News:* In the [YouTubeVOS 2021 challenge](https://youtube-vos.org/challenge/2021/leaderboard/), STCN achieved 1st place accuracy for novel (unknown) classes and 2nd place in overall accuracy. Our solution is faster and lighter than the overall 1st place.
+*News:* In the [YouTubeVOS 2021 challenge](https://youtube-vos.org/challenge/2021/leaderboard/), STCN achieved 1st place accuracy in novel (unknown) classes and 2nd place in overall accuracy. Our solution is also fast and light.
 
 We present Space-Time Correspondence Networks (STCN) as the new, effective, and efficient framework to model space-time correspondences in the context of video object segmentation.
 STCN achieves SOTA results on multiple benchmarks while running fast at 20+ FPS without bells and whistles. Its speed is even higher with mixed precision.
