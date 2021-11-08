@@ -21,8 +21,8 @@ body {
 }
 
 .metric_table {
-  border-collapse:collapse;
-  margin-left: auto; 
+  border-collapse: collapse;
+  margin-left: 15px; 
   margin-right: auto;
 }
 
@@ -35,6 +35,10 @@ body {
 .metric_table td{
   padding-left: 15px;
   padding-right: 15px;
+}
+
+.metric_table .left_align{
+  text-align: left;
 }
 
 a:link,a:visited
