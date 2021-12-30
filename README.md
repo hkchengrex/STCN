@@ -124,6 +124,8 @@ s012 model (better): [[Google Drive]](https://drive.google.com/file/d/1mRrE0uCI2
 
 s03 model: [[Google Drive]](https://drive.google.com/file/d/1JllXPJZola0G-g1aUQfXe9nLMBioj-aH/view?usp=sharing) [[OneDrive]](https://uillinoisedu-my.sharepoint.com/:u:/g/personal/hokeikc2_illinois_edu/EdhurrdqNTFIoK43NsboxOgBPTsMlJBoKOirflGUn-JqBA?e=8NATDz)
 
+s0 pretrained model: [[GitHub]](https://github.com/hkchengrex/STCN/releases/tag/1.0)
+
 ### Inference
 
 - `eval_davis_2016.py` for DAVIS 2016 validation set
