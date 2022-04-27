@@ -8,7 +8,7 @@ from util.tensor_util import pad_divide_by
 
 
 class InferenceCore:
-    def __init__(self, prop_net:STCN, images, num_objects, top_k=20, mem_every=5, include_last=False):
+    def __init__(self, prop_net:STCN, images, num_objects, top_k=20, mem_every=5, include_last=False, kmn_sigma=None):
         self.prop_net = prop_net
         self.mem_every = mem_every
         self.include_last = include_last
@@ -36,7 +36,7 @@ class InferenceCore:
         self.kh = self.nh//16
         self.kw = self.nw//16
 
-        self.mem_bank = MemoryBank(k=self.k, top_k=top_k)
+        self.mem_bank = MemoryBank(k=self.k, top_k=top_k, kmn_sigma=kmn_sigma)
 
     def encode_key(self, idx):
         result = self.prop_net.encode_key(self.images[:,idx].cuda())
