@@ -24,6 +24,11 @@ Despite its effectiveness, the network itself is very simple with lots of room f
 
 2. Reproducibility: We have updated the package requirements below. With that environment, we obtained DAVIS J&F in the range of [85.1, 85.5] across multiple runs on two different machines.
 
+**UPDATE (27-Apr-2022)**
+
+Multi-scale testing code (as in the paper) has been added [here](https://github.com/hkchengrex/STCN/tree/ms/ms).
+
+
 ## What do we have here?
 
 1. [A gentle introduction](#a-gentle-introduction)
@@ -133,6 +138,8 @@ s0 pretrained model: [[GitHub]](https://github.com/hkchengrex/STCN/releases/tag/
 - `eval_youtube.py` for YouTubeVOS 2018/19 validation set (controlled by `--yv_path`)
 
 The arguments tooltip should give you a rough idea of how to use them. For example, if you have downloaded the datasets and pretrained models using our scripts, you only need to specify the output path: `python eval_davis.py --output [somewhere]` for DAVIS 2017 validation set evaluation. For YouTubeVOS evaluation, point `--yv_path` to the version of your choosing.
+
+Multi-scale testing code (as in the paper) has been added [here](https://github.com/hkchengrex/STCN/tree/ms/ms).
 
 ### Training
 
