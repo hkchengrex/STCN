@@ -8,6 +8,8 @@ NeurIPS 2021
 
 [[arXiv]](https://arxiv.org/abs/2106.05210) [[PDF]](https://arxiv.org/pdf/2106.05210) [[Project Page]](https://hkchengrex.github.io/STCN/) [[Papers with Code]](https://paperswithcode.com/task/semi-supervised-video-object-segmentation)
 
+## Check out our new work on long-term VOS [XMem](https://github.com/hkchengrex/XMem)!
+
 ![bmx](https://imgur.com/SIFq5c1.gif) ![pigs](https://imgur.com/nHvWuzi.gif)
 
 *News:* In the [YouTubeVOS 2021 challenge](https://youtube-vos.org/challenge/2021/leaderboard/), STCN achieved 1st place accuracy in novel (unknown) classes and 2nd place in overall accuracy. Our solution is also fast and light.
