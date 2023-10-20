@@ -8,7 +8,7 @@ NeurIPS 2021
 
 [[arXiv]](https://arxiv.org/abs/2106.05210) [[PDF]](https://arxiv.org/pdf/2106.05210) [[Project Page]](https://hkchengrex.github.io/STCN/) [[Papers with Code]](https://paperswithcode.com/task/semi-supervised-video-object-segmentation)
 
-## Check out our new work on long-term VOS [XMem](https://github.com/hkchengrex/XMem)!
+## Check out our new work [Cutie](https://github.com/hkchengrex/Cutie)!
 
 ![bmx](https://imgur.com/SIFq5c1.gif) ![pigs](https://imgur.com/nHvWuzi.gif)
 
