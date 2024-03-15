@@ -185,6 +185,7 @@ I recommend either softlinking (`ln -s`) existing data or use the provided `down
 BL30K is a synthetic dataset proposed in [MiVOS](https://github.com/hkchengrex/MiVOS/#bl30k).
 
 You can either use the automatic script `download_bl30k.py` or download it manually from [MiVOS](https://github.com/hkchengrex/MiVOS/#bl30k). Note that each segment is about 115GB in size -- 700GB in total. You are going to need ~1TB of free disk space to run the script (including extraction buffer).
+**Google might block the Google Drive link. You can 1) make a shortcut of the folder to your own Google Drive, and 2) use `rclone` to copy from your own Google Drive (would not count towards your storage limit).**
 
 #### Training commands
 
